@@ -1,7 +1,7 @@
 \name{HMMRel-package}
 \alias{HMMRel-package}
 \docType{package}
-\title{HMMRel - Hidden Markov Models for Reliablity and Maintenance}
+\title{HMMRel - Hidden Markov Models for Reliability and Maintenance}
 
 \description{
  Reliability Analysis and Maintenance Optimization using Hidden Markov Models (HMM).

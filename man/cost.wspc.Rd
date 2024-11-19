@@ -5,7 +5,7 @@ Maintenance Policy based on Warning Signal Probability Criteria.
 }
 
 \description{
-Preventive maintenance based on Warning Signal Probability Criteria (CSPC).
+Preventive maintenance based on Warning Signal Probability Criteria (WSPC).
 }
 
 \usage{
@@ -22,15 +22,14 @@ cost.wspc(prob,hmmR,n.up1,n.green1,cost.C,cost.P,t.max)
 }
 
 \details{
-Preventive maintenance policies based on Warning Signal Probability criteria (CSPC) is considered.
-Roughly speaking, a preventive maintenance action is carried out at a time when the probability that system is not occupying an optimal operational
-state or a warning signal is received is above a prespecified value \code{prob}.
+Preventive maintenance policies based on Warning Signal Probability criteria (WSPC) are considered.
+Roughly speaking, a preventive maintenance action is carried out at a time when the probability that a warning signal is received is above a prespecified value \code{prob}.
 The subset of operative states \code{up} is in turn split into two subsets:
 optimal states or \code{up1} and operative but critical states or \code{up2}, where \code{up}=\code{up1}\eqn{\cup}\code{up2}.
 Similarly, the set of \code{green} signals is split into two subsets: \code{safe} signals and \code{warning} signals.
 \code{n.green1} is the size of subset \code{safe}.
 For a given probability value (\code{prob}) this function first calculates the optimal inspection time
-\deqn{\code{t.insp}=\min \{t>0: \Pr( Y(t) \in \text{warning}, Y(u) \in \text{safe}, \forall u \leq t )\}.}
+\deqn{\code{t.insp}=\min \{t>0: \Pr( Y(t) \in \text{warning}, Y(u) \in \text{safe}, \forall u < t )\geq \code{prob}\}.}
 The system is inspected every \code{t.insp} units.of time. At the time of inspection, any of three situations can be found:
 \enumerate{
 \item the system is in failure, then the system is returned to operational conditions (\code{up1}), and a cost of \code{cost.C} monetary-units is implied;

@@ -21,11 +21,11 @@ cost.cspc(prob,hmmR,n.up1,cost.C,cost.P,t.max)
   \item{t.max}{ A time value for the maximum time the system will be in use. After that time the system will not operate anymore.}
 }
 \details{
-Preventive maintenance policies based on critical states probability critera (CSPC) is considered.
+Preventive maintenance policies based on critical states probability critera (CSPC) are considered.
 Roughly speaking, a preventive maintenance action is carried out once the system enters a subset of operational states that are considered critical
 in some sense. The subset of operative states \code{up} is in turn split into two subsets:
 optimal states or \code{up1} and operative but critical states or \code{up2}, where \code{up}=\code{up1} \eqn{\cup} \code{up2}.
-For a given probability value (\code{prob}) this function first calculates the optimal inspection time \deqn{\code{t.insp}=\min \{t>0: \Pr( X(t) \in \text{up2}, X(u) \in \text{up1}, \forall u \leq t )\}.}
+For a given probability value (\code{prob}) this function first calculates the optimal inspection time \deqn{\code{t.insp}=\min \{t>0: \Pr( X(t) \in \text{up2}, X(u) \in \text{up1}, \forall u < t )\geq \code{prob}\}.}
 The system is inspected every \code{t.insp} time-units. At the time of inspection, any of three situations can be found:
 \enumerate{
 \item the system is in failure, then the system is returned to operational conditions (\code{up1}), and a cost of \code{cost.C} monetary-units is implied;

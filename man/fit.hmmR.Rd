@@ -16,7 +16,7 @@ fit.hmmR(Y,P0,M0,alpha0,max.iter=50,epsilon=1e-9,Nx,Ny)
   \item{P0}{A square matrix of dimension \code{Nx} with the transition probabilities of the hidden MC at the first iteration of the algorithm.}
   \item{M0}{A matrix of dimension \code{Nx} \eqn{\times} \code{Ny} with the emission probabilities at the first step of the algorithm.}
   \item{alpha0}{A vector of size \code{Nx} with the initial distribution of the hidden Markov chain at the first iteration of the algorithm.}
-  \item{max.iter}{A integer value with the maximum number of iterations in the iterative algorithm. Default value is \code{max.ite}=50.}
+  \item{max.iter}{An integer value with the maximum number of iterations in the iterative algorithm. Default value is \code{max.ite}=50.}
   \item{epsilon}{A numeric value with the tolerance in the iterative algorithm. Default value is \code{epsilon}=1e-9.}
   \item{Nx}{An integer value with the maximum number of states of the hidden Markov chain.}
   \item{Ny}{An integer value with the maximum number of signals emitted by the system.}
@@ -33,7 +33,7 @@ fit.hmmR(Y,P0,M0,alpha0,max.iter=50,epsilon=1e-9,Nx,Ny)
 \item{M}{A matrix of \code{Nx} rows and \code{Ny} columns, with the estimated emission probabilities.}
 \item{n.iter}{An integer indicating the number of iterations performed in the algorithm.}
 \item{tol}{A numeric value with the achieved tolerance value in the algorithm.}
-\item{Fm}{A matrix of dimension \code{n} \eqn{\times} \code{Nx} with the estimated forward probability values at the last iteration of the algorithm.}
+\item{Fm}{A matrix of dimension \code{n} \eqn{\times} \code{Nx} with the estimated forward probability values at the last iteration of the algorithm, where \code{n} is the size of the observed vector \code{Y}. }
 \item{Bm}{A matrix of dimension \code{Nx} \eqn{\times} \code{n} with the estimated forward probability values at the last iteration of the algorithm.}
 \item{AIC}{The estimated value of the Akaike statistics. The number of parameters to be estimated is \code{nparam}=\code{Nx}*(\code{Nx}-1)+\code{Nx}*(\code{Ny}-1).}
 }

@@ -16,7 +16,7 @@ def.hmmR(model,rate,p,alpha,P,M,Nx,Ny,n.up,n.green)
 \arguments{
 \item{model}{ A character string to choose which HMM model is considered. Possible values are "KooN", "shock", "other"}
 \item{rate}{ A positive real number indicating the failure rate of one unit of the system.}
-\item{p}{ A real number in the interval (0,1) indicating the probability that the system receives one shock during two consecutive inspections.}
+\item{p}{ A real number in the interval (0,1) indicating the probability that the system receives one shock during a unit of time.}
 \item{alpha}{ A vector of size \code{Nx} with the initial law of the hidden Markov chain.}
 \item{P}{ A square matrix of dimension \code{Nx} with the transition probabilities between the hidden states.}
 \item{M}{ A matrix of dimension \code{Nx} \eqn{\times} \code{Ny} with the emission probabilities.}
@@ -29,8 +29,8 @@ def.hmmR(model,rate,p,alpha,P,M,Nx,Ny,n.up,n.green)
 \details{
 \itemize{
 \item When \code{model}=\code{"KooN"} the argument \code{Nx} is the maximum number of units in the system. There must be  \code{K}=\code{n.up} operative units for the system to function.
-If \code{K}=1 a parallel system is built. If \code{K}=N a series system is built.
-\item When \code{model}=\code{"shock"} the argument \code{Nx} is the maximum number of shocks that the system can accumulate before breakdown.
+If \code{K}=1 a parallel system is built. If \code{K}=\code{Nx} a series system is built.
+\item When \code{model}=\code{"shock"} the argument \code{Nx} minus 1 is the maximum number of shocks that the system can accumulate before breakdown.
 }}
 
 \value{
